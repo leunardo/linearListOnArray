@@ -20,9 +20,9 @@ public class LinearList {
     }
 
     public void createLinearList(Integer array[]) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 1;
-        }
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = 0;
+//        }
 
         for (int i = startList; i < endList; i++) {
             array[i] = null;
@@ -75,6 +75,8 @@ public class LinearList {
             } else {
                 System.out.println("Não é possível adicionar mais nodos.");
             }
+        } else {
+            System.out.println("Não há lista linear");
         }
     }
 
@@ -93,24 +95,28 @@ public class LinearList {
 
     public void removeFirstNode(Integer array[]) {
         if (thereIsLinearList(array)) {
-            array[startList] = 1;
+            array[startList] = 0;
             startList++;
             System.out.println("Nodo removido.");
+        } else {
+            System.out.println("Não há lista linear");
         }
     }
 
     public void removeEndNode(Integer array[]) {
         if (thereIsLinearList(array)) {
-            array[endList] = 1;
+            array[endList - 1] = 0;
             endList--;
             System.out.println("Nodo removido.");
+        } else {
+            System.out.println("Não há lista linear");
         }
     }
 
     public void removeLinearList(Integer array[]) {
         if (thereIsLinearList(array)) {
             for (int i = startList; i < endList; i++) {
-                array[i] = 1;
+                array[i] = 0;
             }
         } else {
             System.out.println("Não há lista linear.");
@@ -141,7 +147,7 @@ public class LinearList {
 
     private boolean thereIsLinearList(Integer array[]) {
         for (Integer nodo : array) {
-            if (nodo != 0) {
+            if (nodo == null) {
                 return true;
             }
         }
