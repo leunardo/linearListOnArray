@@ -13,15 +13,14 @@ import java.util.Scanner;
  * valores considerados: 
  * A LA tem o tamanho de 50; 
  * A LA é inicializada com 0 para representar a inexistência de LL; 
- * Todos os valores de uma LL são definidos como NULL;
- * Após haver uma LL, todos os valores diferentes dos que representam a LL serão 1;
+ * Todos os valores de uma LL são definidos como NULL; 
  */
 public class LinearListOnArray {
 
     static Scanner input = new Scanner(System.in);
     static int nodes;
     static Integer array[]
-            = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public static void main(String[] args) {
         LinearList ll = new LinearList();
@@ -81,7 +80,7 @@ public class LinearListOnArray {
         int x;
         do {
             System.out.println(
-                    "1. Criar Lista\n"
+                    "\n1. Criar Lista\n"
                     + "2. Inserir Nodo no Inicio\n"
                     + "3. Inserir  Nodo no Meio\n"
                     + "4. Inserir  Nodo no Fim\n"
