@@ -72,10 +72,20 @@ public class LinearListOnArray {
                     backmenu = true;
                     break;
                 case 8:
+                    if(descriptor == null){
+                        System.out.println("Não há lista linear.");
+                    } else {
+                        descriptor.printDescriptor();
+                    }
                     ll.showLinearList(array);
                     backmenu = true;
                     break;
                 case 9:
+                    if(descriptor == null){
+                        System.out.println("Não há lista linear.");
+                    } else {
+                        descriptor.printDescriptor();
+                    }
                     ll.showArrayList(array);
                     backmenu = true;
                     break;
