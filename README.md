@@ -15,4 +15,5 @@ Quando for realizado a inserção central, o aluno deverá observar  onde será 
 7.	Remover Lista [LL]
 8.	Imprimir Lista [LL]
 9.	Imprimir Lista [LA]
-10.	Fim
+10. Imprimir Descritor
+11.	Fim
