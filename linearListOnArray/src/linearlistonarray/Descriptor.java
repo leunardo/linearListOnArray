@@ -5,6 +5,14 @@ import java.util.Arrays;
 /**
  *
  * @author Leu <@leunardosevla at twitter.com>
+ * 
+ * Estrutura descritor:
+ * [DIL,DNR,DMA,DME,DFL]
+ * DIL inicio lista
+ * DNR numero elementos
+ * DMA maior elemento
+ * DME menor elemento
+ * DFL final lista
  */
 public class Descriptor {
     private final int [] descriptor = new int [5];
@@ -25,10 +33,10 @@ public class Descriptor {
     
     private void setDescriptor() {
         descriptor[0] = firstNode;
-        descriptor[1] = lastNode;
-        descriptor[2] = length;
-        descriptor[3] = lowNode;
-        descriptor[4] = highNode;
+        descriptor[4] = lastNode;
+        descriptor[1] = length;
+        descriptor[2] = lowNode;
+        descriptor[3] = highNode;
     }
     
     public void printDescriptor() {
