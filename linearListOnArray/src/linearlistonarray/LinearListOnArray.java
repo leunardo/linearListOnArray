@@ -20,45 +20,55 @@ public class LinearListOnArray {
     static Scanner input = new Scanner(System.in);
     static int nodes;
     static Integer array[]
-            = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                0, 0, 0, 0, 0, 0, 0};
 
     public static void main(String[] args) {
         LinearList ll = new LinearList();
+        Descriptor descriptor = null;
         boolean backmenu = false;
         do {
             switch (menu()) {
                 case 1:
                     do {
-                        System.out.println("Informe a quantidade de nodos: (min 1, max 25");
+                        System.out.println("Informe a quantidade de nodos: (min 1, max 25)");
                         nodes = input.nextInt();
                     } while (nodes > 25 || nodes < 1);
                     ll = new LinearList(array, nodes);
                     ll.createLinearList(array);
+                    descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 2:
                     ll.addFirstNode(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 3:
                     ll.addMiddleNode(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
 
                 case 4:
                     ll.addLastNode(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 5:
                     ll.removeFirstNode(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 6:
                     ll.removeEndNode(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 7:
                     ll.removeLinearList(array);
+                    if(ll.getHighList() != null) descriptor = new Descriptor(ll);
                     backmenu = true;
                     break;
                 case 8:
@@ -70,6 +80,15 @@ public class LinearListOnArray {
                     backmenu = true;
                     break;
                 case 10:
+                    if(descriptor == null){
+                        System.out.println("Não há lista linear.");
+                    } else {
+                        descriptor.printDescriptor();
+                    }
+                    
+                    backmenu = true;
+                    break;
+                case 11:                     
                     backmenu = false;
                     break;
             }
@@ -89,9 +108,10 @@ public class LinearListOnArray {
                     + "7. Remover Lista [LL]\n"
                     + "8. Imprimir Lista [LL]\n"
                     + "9. Imprimir Lista [LA]\n"
-                    + "10. Fim");
+                    + "10. Imprimir Descriptor[DL]\n"
+                    + "11. Fim");
             x = input.nextInt();
-        } while (x > 10 || x < 1);
+        } while (x > 11 || x < 1);
         return x;
     }
 }
